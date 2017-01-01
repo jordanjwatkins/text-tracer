@@ -1,0 +1,273 @@
+.options-panel {
+    background-color: #274690;
+    bottom: 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color: #f5f3f5;
+    height: 100%;
+    left: 0;
+    overflow-y: auto;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    width: 300px;
+    z-index: 10;
+}
+
+.options-panel__heading {
+    font-size: 45px;
+    line-height: 1;
+    margin: 10px;
+    text-align: center;
+}
+
+.options-panel__heading,
+.current-font__name {
+    font-family: 'Lobster', sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+    transition: opacity 0.2s, border-color 0.2s;
+}
+
+.options-panel__user-text {
+    text-align: center;
+}
+
+.options-panel__form > div {
+    padding: 0 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.font-properties label {
+    display: block;
+    font-size: 18px;
+    left: 11px;
+    margin-bottom: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.font-properties > div {
+    margin-bottom: 15px;
+}
+
+.field-unit {
+    border-left: 0 solid #f5f5f5;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    z-index: 10;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=text],
+input[type=number],
+select,
+input[type=submit],
+.font-change-panel__upload,
+input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background: #576ca8;
+    border: 2px solid transparent;
+    border-radius: 7px;
+    color: #f5f5f5;
+    font-size: 20px;
+    margin-bottom: 0;
+    padding: 10px;
+    transition: opacity 0.2s, border-color 0.2s, background-color 0.2s;
+    width: 100%;
+}
+
+select {
+    height: auto;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.font-properties input[type=text],
+input[type=number] {
+    padding-left: 130px;
+    padding-right: 25px;
+    text-align: right;
+}
+
+.font-properties select {
+    direction: rtl;
+    padding-right: 10px;
+}
+
+/* hide default controls where appearance: none fails */
+.field-wrap--select:before {
+    background-color: #576ca8;
+    border-radius: 5px;
+    bottom: 5px;
+    content: '';
+    left: 5px;
+    pointer-events: none;
+    position: absolute;
+    right: 40%;
+    top: 5px;
+    z-index: 1;
+}
+
+input[type=submit] {
+    background-color: #1b264f;
+    cursor: pointer;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+input[type=submit]:hover,
+.current-font__random:hover {
+    background-color: #576ca8;
+}
+
+input[type=submit]:active,
+.current-font__random:active {
+    opacity: 0.6;
+}
+
+input[type=file] {
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+input:focus,
+select:focus,
+.current-font__name:focus,
+.current-font__name:hover,
+.current-font__random:focus {
+    border: 2px solid rgba(245,245,245,0.5);
+    outline: none;
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #f5f3f5;
+    transition: 0s;
+}
+
+input[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+    outline: none;
+}
+
+hr {
+    margin: 20px;
+}
+
+.current-font {
+    border-bottom: 1px solid #758cce;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.current-font__name {
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: #758cce;
+    cursor: pointer;
+    font-size: 35px;
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 100%;
+}
+
+.current-font__random {
+    background-color: #1b264f;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: #f5f3f5;
+    cursor: pointer;
+    margin: 5px 15px 10px;
+    padding: 8px 15px;
+}
+
+.current-font__name:before,
+.options-panel__heading:before {
+    background: #302b27;
+    border-radius: 10px;
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.font-loading .current-font__name,
+.font-loading .options-panel__heading {
+    color: transparent;
+}
+
+.font-loading .current-font__name:before,
+.font-loading .options-panel__heading:before {
+    animation: blink 1s linear infinite;
+}
+
+.options-panel .font-properties .jscolor {
+    left: 50%;
+    padding: 10px;
+    width: 40%;
+}
+
+label[for='stroke-color'],
+label[for='background-color'] {
+    text-align: right;
+    width: 42%;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: #f5f3f5;
+}
+
+::-moz-placeholder {
+    color: #f5f3f5;
+    opacity: 1;
+}
+
+::placeholder {
+    color: #f5f3f5;
+    opacity: 1;
+}

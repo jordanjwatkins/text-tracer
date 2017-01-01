@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+body,
+html {
+    background: #576ca8;
+    font: 15px sans-serif;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+::selection {
+    background-color: #1b264f;
+}

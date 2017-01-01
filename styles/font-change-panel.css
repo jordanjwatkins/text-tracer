@@ -1,0 +1,76 @@
+.options-panel .font-change-panel {
+    background: #1b264f;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    margin-top: -67px;
+    padding: 25px 20px 12px 30px;
+    position: absolute;
+    transform: translate3d(-130%, 0, 0);
+    transition: visibility 0.4s, transform 0.4s;
+    transition-delay: 0.1s; /* avoid animation jump when loading a new font and closing at the same time */
+    visibility: hidden;
+    width: 100%;
+    z-index: 100;
+}
+
+.font-change-panel.is-showing {
+    transform: translateX(-13px);
+    visibility: visible;
+}
+
+.font-change-panel > div {
+    margin-bottom: 15px;
+}
+
+.font-change-panel__close {
+    background-color: #274690;
+    border: 3px solid #576ca8;
+    border-radius: 100%;
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    transition: 0.3s background-color;
+    width: 20px;
+}
+
+.font-change-panel__close:hover,
+.font-change-panel__close:focus {
+    background-color: #f5f3f5;
+    outline: none;
+}
+
+/* needs extra weight to override font-size */
+.font-change-panel .font-change-panel__google-fonts {
+    font-size: 16px;
+    text-align: left;
+}
+
+.font-change-panel__upload {
+    border: 3px dashed #274690;
+    color: #274690;
+    margin-top: 20px;
+    padding: 4px;
+}
+
+.font-change-panel__upload.focus {
+    border: 3px dashed #f5f3f5;
+    color: #274690;
+    margin-top: 20px;
+}
+
+.font-change-panel__upload label {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    top: 3px;
+}
+
+.font-change-panel__or {
+    color: #576ca8;
+    font-size: 30px;
+    line-height: 0.5;
+    text-align: center;
+}

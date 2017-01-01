@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "build": "npm run eslint && npm run csscomb && npm run postcss && npm run webpack && npm run uglify",
+    "eslint": "eslint js/**",
+    "uglify": "uglifyjs build/bundle.js -c -m --keep-fnames -o build/bundle.min.js",
+    "csscomb": "csscomb styles",
+    "postcss": "postcss -c postcss-options.json",
+    "webpack": "webpack",
+    "watch:js": "webpack --watch",
+    "dev": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "csscomb": "^4.0.1",
+    "cssnano": "^3.10.0",
+    "eslint": "^3.16.1",
+    "postcss-cli": "^2.6.0",
+    "postcss-easy-import": "^2.0.0",
+    "uglify-js": "^2.8.4",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}

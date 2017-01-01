@@ -1,0 +1,50 @@
+.drawing-panel {
+    bottom: 0;
+    left: 300px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+}
+
+@media (max-width: 600px) {
+    .drawing-panel {
+        left: 0;
+    }
+}
+
+.svg-container {
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50vmin;
+    transform: translateY(-50%);
+}
+
+svg {
+    display: inline-block;
+    max-width: 100%;
+    overflow: visible; /* hidden is default for svgs */
+}
+
+path {
+    display: block;
+}
+
+.is-tracing path {
+    animation: dash 4s linear forwards;
+}
+
+.transparent-stroke path {
+    stroke: transparent !important;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

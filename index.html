@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1080">
+
+    <title>Text Tracer</title>
+
+    <link rel="stylesheet" href="build/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.css">
+
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="options-panel">
+        <form class="options-panel__form">
+            <div>
+                <h1 class="options-panel__heading">
+                    <label for="user-text">Text Tracer</label>
+                </h1>
+
+                <input type="text" id="user-text" name="user-text" class="options-panel__user-text" value="Hello World!">
+            </div>
+
+            <hr>
+
+            <div>
+                <div class="current-font">
+                    <label for="current-font">Font</label>
+                    <button type="button" id="current-font" class="current-font__name" name="current-font">Lobster</button>
+                    <button type="button" class="current-font__random" name="random-font">Random</button>
+                </div>
+            </div>
+
+            <div class="font-change-panel">
+                <button type="button" class="font-change-panel__close js-close"></button>
+
+                <div>
+                    <input type="text" class="font-change-panel__google-fonts" name="google-fonts" placeholder="Start typing for Google Fonts...">
+                </div>
+
+                <div class="font-change-panel__or">or</div>
+
+                <div class="font-change-panel__upload">
+                    <label for="font-upload">Upload a font</label>
+                    <input type="file" id="font-upload" name="font-upload">
+                </div>
+            </div>
+
+            <div class="font-properties">
+                <div class="field-wrap--select">
+                    <label for="variants">Style:</label>
+                    <select id="variants" name="variants">
+                        <option value="normal">normal</option>
+                    </select>
+                </div>
+
+                <div class="field-wrap--select">
+                    <label for="weights">Weight:</label>
+                        <select id="weights" name="weights"><option value="400">400</option>
+                    </select>
+                </div>
+
+                <div>
+                    <div class="field-unit">px</div>
+                    <label for="font-size">Font Size:</label>
+                    <input type="number" id="font-size" name="font-size" min="0" max="700" value="182">
+                </div>
+
+                <div>
+                    <div class="field-unit">px</div>
+                    <label for="stroke-width">Stroke Width:</label>
+                    <input type="number" id="stroke-width" name="stroke-width" min="0" value="3">
+                </div>
+
+                <div>
+                    <div class="field-unit">s</div>
+                    <label for="stroke-width">Duration:</label>
+                    <input type="number" id="animation-duration" name="animation-duration" min="0" value="4" step="0.1">
+                </div>
+
+                <div>
+                    <label for="stroke-color">Stroke<br> Color</label>
+                    <input type="text" id="stroke-color" name="stroke-color" class="jscolor" value="F5F5F5">
+                </div>
+
+                <div>
+                    <label for="background-color">Background<br> Color</label>
+                    <input type="text" id="background-color" name="background-color" class="jscolor" value="576CA8">
+                </div>
+
+                <div>
+                    <input class="options-panel__submit" type="submit" name="trace-submit" value="Trace!">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="drawing-panel" class="drawing-panel">
+        <div class="export-panel">
+            <button class="export-panel__open">Export</button>
+
+            <button class="export-panel__close"></button>
+
+            <div class="file-sizes">
+                <span class="js-svg-size">0</span> / <span class="js-total-size">0</span>kb svg / total
+            </div>
+
+            <label for="svg-copy" class="export-panel__svg-copy-wrapper">
+                <textarea class="export-panel__svg-copy" id="svg-copy" name="svg-copy" spellcheck="false"></textarea>
+            </label>
+
+            <div class="export-panel__options">
+                <div class="export-panel__left-options">
+                    <div class="use-js-animation">
+                        <div class="toggle toggle--slider">
+                            <input type="checkbox" id="use-js-animation" name="use-js-animation" class="toggle__checkbox" value="true">
+
+                            <div class="toggle__visibles-wrap">
+                                <label for="use-js-animation">JS</label>
+                                <div class="toggle__slider"><label for="use-js-animation">Animation</label></div>
+                                <label for="use-js-animation">CSS</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="export-panel__pop-up-preview">Popup Preview</button>
+
+                <a class="export-panel__download" download="text-trace.html">Download</a>
+            </div>
+        </div>
+
+        <div id="svg-container" class="svg-container"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/opentype.js/0.6.9/opentype.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+
+    <script src="build/bundle.min.js"></script>
+</body>

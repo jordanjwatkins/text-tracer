@@ -1,0 +1,10 @@
+{
+  "use": ["postcss-easy-import", "autoprefixer", "cssnano"],
+  "input": "./styles/app.css",
+  "output": "./build/app.css",
+  "map": { "inline": false },
+  "cssnano": {
+    "reduceIdents": false
+  },
+  "local-plugins": true
+}
