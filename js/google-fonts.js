@@ -100,7 +100,8 @@ function updateWeights() {
 }
 
 function getFontUrl() {
-  return this.fonts[this.fontName]['variants'][this.variant][this.weight]['url']['woff'];
+  return this.fonts[this.fontName]['variants'][this.variant][this.weight]['url']['woff']
+    .replace('http:', 'https:');
 }
 
 function resetGoogleFontsField() {

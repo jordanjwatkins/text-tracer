@@ -17,7 +17,7 @@ function componentConfigs(elDrawingPanel, elOptionsPanel, svgDashOffsetCSSAnimat
   return {
     drawConfig: {
       userText: 'Hello world!',
-      fontUrl: 'http://fonts.gstatic.com/s/lobster/v18/TSDaXhyJuDJ-NBU0popSWA.ttf',
+      fontUrl: 'https://fonts.gstatic.com/s/lobster/v18/TSDaXhyJuDJ-NBU0popSWA.ttf',
       fontName: 'Lobster',
       fontSize: 182,
       strokeWidth: 3,
