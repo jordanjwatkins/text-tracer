@@ -1059,7 +1059,7 @@ function updateWeights() {
 }
 
 function getFontUrl() {
-  return this.fonts[this.fontName]['variants'][this.variant][this.weight]['url']['woff'];
+  return this.fonts[this.fontName]['variants'][this.variant][this.weight]['url']['woff'].replace('http:', 'https:');
 }
 
 function resetGoogleFontsField() {
@@ -1354,7 +1354,7 @@ function componentConfigs(elDrawingPanel, elOptionsPanel, svgDashOffsetCSSAnimat
   return {
     drawConfig: {
       userText: 'Hello world!',
-      fontUrl: 'http://fonts.gstatic.com/s/lobster/v18/TSDaXhyJuDJ-NBU0popSWA.ttf',
+      fontUrl: 'https://fonts.gstatic.com/s/lobster/v18/TSDaXhyJuDJ-NBU0popSWA.ttf',
       fontName: 'Lobster',
       fontSize: 182,
       strokeWidth: 3,
